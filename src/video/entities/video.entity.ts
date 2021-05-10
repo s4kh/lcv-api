@@ -1,13 +1,30 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Video {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  url: string;
+  url?: string;
+
+  @CreateDateColumn()
+  created!: Date;
+
+  @UpdateDateColumn()
+  updated!: Date;
+
+  // Add this column to your entity!
+  @DeleteDateColumn()
+  deletedAt?: Date;
 }
