@@ -9,7 +9,7 @@ import { Video } from './entities/video.entity';
 export class VideoService {
   constructor(
     @InjectRepository(Video)
-    private readonly videoRepository: Repository<Video>,
+    private videoRepository: Repository<Video>,
   ) {}
 
   create(createVideoDto: CreateVideoDto) {
